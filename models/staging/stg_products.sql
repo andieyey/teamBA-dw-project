@@ -11,4 +11,4 @@ SAFE_CAST(ModifyDate AS TIMESTAMP) AS modify_date,
 Resistant AS resistant,
 IsAllergic AS is_allergic,
 SAFE_CAST(VitalityDays AS INT64) AS vitality_days
-FROM {{ source('raw','products') }}
+FROM `grocery-sales-478511`.`grocery_sales_478511_grocery_sales`.`Grocery_Sales`
