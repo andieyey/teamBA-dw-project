@@ -1,11 +1,12 @@
 {{ config(materialized='view') }}
 
-
 SELECT
-CAST(CustomerID AS STRING) AS customer_id,
-FirstName AS first_name,
-MiddleInitial AS middle_initial,
-LastName AS last_name,
-CAST(CityID AS STRING) AS city_id,
-Address AS address
+  CAST(CustomerID AS STRING) AS customer_id,
+  ANY_VALUE(FirstName) AS first_name,
+  ANY_VALUE(MiddleInitial) AS middle_initial,
+  ANY_VALUE(LastName) AS last_name,
+  CAST(CityID AS STRING) AS city_id,
+  ANY_VALUE(Address) AS address
 FROM `grocery-sales-478511`.`grocery_sales_478511_grocery_sales`.`Grocery_Sales`
+WHERE CustomerID IS NOT NULL
+GROUP BY CustomerID, CityID
