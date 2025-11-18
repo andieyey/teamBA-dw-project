@@ -10,4 +10,4 @@ SAFE_CAST(BirthDate AS DATE) AS birth_date,
 Gender AS gender,
 CAST(CityID AS STRING) AS city_id,
 SAFE_CAST(HireDate AS DATE) AS hire_date
-FROM {{ source('raw','employees') }}
+FROM `grocery-sales-478511`.`grocery_sales_478511_grocery_sales`.`Grocery_Sales`
