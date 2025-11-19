@@ -2,13 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    database: grocery-sales-478511     # replace with your GCP project ID
-    schema: grocery_sales_478511          # replace with the BigQuery dataset where Airbyte writes CSVs
+    database: grocery-sales-478511
+    schema: grocery_sales_478511_grocery_sales  # The actual dataset name in BigQuery
     tables:
-      - name: sales
-      - name: products
-      - name: customers
-      - name: employees
-      - name: cities
-      - name: countries
-      - name: categories
+      - name: Grocery_Sales  # The main source table

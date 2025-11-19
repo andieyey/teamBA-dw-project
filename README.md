@@ -1,15 +1,35 @@
-Welcome to your new dbt project!
+# Grocery Sales dbt Project
 
-### Using the starter project
+### Quick Start
 
-Try running the following commands:
-- dbt run
-- dbt test
+```bash
+# Activate environment
+source venv/bin/activate
 
+# Run models
+dbt run
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+# Run tests
+dbt test
+
+# View documentation & lineage (opens in browser)
+dbt docs generate
+dbt docs serve
+```
+
+### Models
+
+**Staging** (7 models): stg_sales, stg_customers, stg_products, stg_employees, stg_categories, stg_cities, stg_countries
+
+**Marts** (4 models): top_customers, monthly_category_revenue, sales_trend_by_region, seasonal_sales
+
+### Configuration
+
+- **Project**: grocery-sales-478511
+- **Location**: asia-southeast1
+- **Dataset**: dbt_dev (staging), dbt_dev_marts (marts)
+- **Service Account**: grocery-sales-478511-b357eadc8ffe.json
+
+---
+
+**View lineage and docs: `dbt docs serve`

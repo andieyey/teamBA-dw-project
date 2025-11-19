@@ -1,0 +1,27 @@
+# Example dbt profile configuration for BigQuery
+# Copy this to ~/.dbt/profiles.yml and update with your credentials
+
+default:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: grocery-sales-478511  # Replace with your GCP project ID
+      dataset: dbt_dev               # Your development dataset
+      threads: 4
+      timeout_seconds: 300
+      location: US                   # Your BigQuery location (US, EU, etc.)
+      keyfile: /path/to/your/service-account-key.json  # Path to your JSON key file
+      
+    prod:
+      type: bigquery
+      method: service-account
+      project: grocery-sales-478511  # Replace with your GCP project ID
+      dataset: dbt_prod              # Your production dataset
+      threads: 4
+      timeout_seconds: 300
+      location: US
+      keyfile: /path/to/your/service-account-key.json
+
+  target: dev  # Default target to use
+

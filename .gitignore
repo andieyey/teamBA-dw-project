@@ -1,5 +1,32 @@
-# you shouldn't commit these into source control
-# these are the default directory names, adjust/add to fit your needs
+# dbt
 target/
 dbt_packages/
 logs/
+*.log
+
+# Python
+venv/
+env/
+.venv/
+*.pyc
+__pycache__/
+*.egg-info/
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Credentials (IMPORTANT: Never commit these!)
+*.json
+keyfile*.json
+*-key.json
+service-account*.json
+
+# Environment
+.env
+.env.local
